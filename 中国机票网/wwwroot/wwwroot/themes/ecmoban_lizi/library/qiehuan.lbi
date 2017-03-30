@@ -1,0 +1,77 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/index.js"></script>
+<style type="text/css">
+.content_middle1{
+	width:1200px;
+	height:440px;
+}
+.content_middle1:hover .common{
+	display: block;
+}
+/*左右切换图标*/
+.content_middle1 .common{
+	display: block;
+	width:50px;
+	height: 100px;
+	position: absolute;
+	z-index: 25;
+    top:72%;
+    margin-top: -50px;
+    display: none;
+}
+/*左右切换图标*/
+.content_middle1 ul li{
+	width:100%;
+	height:440px; 
+	opacity: 0;
+	filter: alpha(opacity=0);
+	position: absolute;
+	margin:0px auto;
+}
+
+/*切换小图标*/
+
+.content_middle1 .table{
+	width:475px; 
+	height:33px;
+	position: absolute;
+	bottom:20px;
+	left:50%;
+	z-index:9;
+	margin-left:-255px;  
+	line-height: 24px; 
+}
+.content_middle1 .table a{
+    width:115px;
+    height:33px;  
+    background:#E3DEE1;
+    opacity: 0.8;
+    text-align:center;
+    line-height: 33px;
+    margin-left:3px; 
+    display: block;
+    float:left;  
+}
+
+.content_middle1 .table a.small_active{
+	background:#FF8800;
+	color: #fff;
+	 
+} 
+</style>
+ <div class="content_middle1">
+			          	
+			   <ul>
+				  <li style="background:url(images/ban1.jpg) no-repeat center center;opacity: 100;filter: alpha(opacity=1);"></li>
+				  <li style="background:url(images/ban2.jpg) no-repeat center center;"></li>
+				  <li style="background:url(images/ban3.jpg) no-repeat center center;"></li>
+				  <li style="background:url(images/ban4.jpg) no-repeat center center;"></li>
+			   </ul>
+				<div class="table">
+					<a class="small_active"href="javascript:;">跨年购心动价</a>
+					<a href="javascript:;">五折秒杀周边游</a>
+					<a href="javascript:;">国内最高减1000</a>
+					<a href="javascript:;">迪拜新年特惠</a>
+				</div>
+</div

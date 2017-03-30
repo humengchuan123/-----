@@ -1,0 +1,232 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+	.floating_ck {
+		position: fixed;
+		
+		top: 40%;
+	}
+	
+	.floating_ck dl dd {
+		position: relative;
+		width: 35px;
+		height: 35px;
+		background-color: #000;
+		border-bottom: solid 1px #fff;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-position: center 20%;
+		cursor: pointer;
+		border-radius: 2px
+	}
+	
+	.floating_ck dl dd:hover {
+		background-color: #e40231 !important;
+		border-bottom: solid 1px #a40324;
+	}
+	
+	.floating_ck dl dd:hover .floating_left {
+		display: block;
+	}
+	
+	.user {
+		background-image: url(images/icon0701/user1.png);
+	}
+	
+	.flow {
+		background-image: url(images/icon0701/flow.png);
+	}
+	
+	.guanzhu {
+		background-image: url(images/icon0701/guanzhu.png);
+	}
+	
+	.info {
+		background-image: url(images/icon0701/zxicon.png);
+	}
+	
+	.return {
+		background-image: url(images/icon0701/fanhui.png);
+	}
+	
+	.floating_ck dd span {
+		color: #fff;
+		display: block;
+		padding-top: 54px;
+	}
+	
+	.floating_left {
+		position: absolute;
+		left: -80px;
+		top: 0px;
+		width: 80px;
+		height: 35px;
+		background-color: #e40231;
+		border-bottom: solid 1px #a40324;
+		display: none;
+	}
+	
+	.floating_left a {
+		color: #fff;
+		line-height: 35px;
+		font-size: 12px;
+	}
+	
+	.floating_ewm {
+		height: 260px;
+		top: -180px;
+	}
+	
+	.floating_ewm i {
+		background-image: url(images/erweima.png);
+		display: block;
+		width: 145px;
+		height: 145px;
+		margin: auto;
+		margin-top: 7px;
+	}
+	
+	.floating_ewm p {
+		color: #fff;
+		margin-top: 5px;
+	}
+	
+	.floating_ewm .qrcord_p01 {
+		font-size: 12px;
+		line-height: 20px;
+	}
+	
+	.floating_ewm .qrcord_p02 {
+		font-size: 18px;
+	}
+	/*左右两侧导航栏*/
+	
+	.daohang_left {
+		width: 34px;
+		height: 430px;
+		background: #918888;
+		position: fixed;
+		top: 25%;
+		left: 20px;
+		z-index: 999;
+	}
+	
+	.daohang_left .dohang_menu {
+		width: 34px;
+		height: 44px;
+		line-height: 44px;
+		font-size: 12px;
+		color: #fff;
+		text-align: center;
+		border-bottom: 1px solid #ccc;
+		padding-top: 10px;
+	}
+	
+	.daohang_left .dohang_menu a {
+		color: #fff;
+	}
+	
+	.daohang_left .dohang_menu:hover {
+		cursor: pointer;
+		background-color: #e40231 !important;
+	}
+	
+	.backtop {
+		width: 34px;
+		height: 40px;
+		font-size: 12px;
+		color: #fff;
+		text-align: center;
+		border-top: 1px solid #fff;
+		background: #5e4a4a;
+		padding-top: 5px;
+	}
+	
+	.backtop:hover {
+		cursor: pointer;
+	}
+	
+	.daohang_right {
+		width: 35px;
+		height: 100%;
+		position: fixed;
+		right: 0px;
+		top: 0px;
+		background: #000;
+		z-index: 8888;
+	}
+</style>
+<script type="text/javascript">
+	function gotoTop(acceleration, stime) {
+		acceleration = acceleration || 0.1;
+		stime = stime || 10;
+		var x1 = 0;
+		var y1 = 0;
+		var x2 = 0;
+		var y2 = 0;
+		var x3 = 0;
+		var y3 = 0;
+		if(document.documentElement) {
+			x1 = document.documentElement.scrollLeft || 0;
+			y1 = document.documentElement.scrollTop || 0;
+		}
+		if(document.body) {
+			x2 = document.body.scrollLeft || 0;
+			y2 = document.body.scrollTop || 0;
+		}
+		var x3 = window.scrollX || 0;
+		var y3 = window.scrollY || 0;
+
+		// 滚动条到页面顶部的水平距离
+		var x = Math.max(x1, Math.max(x2, x3));
+		// 滚动条到页面顶部的垂直距离
+		var y = Math.max(y1, Math.max(y2, y3));
+
+		// 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小
+		var speeding = 1 + acceleration;
+		window.scrollTo(Math.floor(x / speeding), Math.floor(y / speeding));
+
+		// 如果距离不为零, 继续调用函数
+		if(x > 0 || y > 0) {
+			var run = "gotoTop(" + acceleration + ", " + stime + ")";
+			window.setTimeout(run, stime);
+		}
+	}
+
+	
+</script>
+
+<div class="daohang_right">
+	<div class="floating_ck">
+		<dl>
+			<dt></dt>
+			<dd class="user">
+
+				<div class="floating_left">
+					<a href="user.php">个人中心</a>
+				</div>
+			</dd>
+			<dd class="flow">
+
+				<div class="floating_left">
+					<a href="flow.php">购物车</a>
+				</div>
+			</dd>
+			<dd class="guanzhu">
+				<div class="floating_left">
+					<a href="user.php?act=collection_list">我的关注</a>
+				</div>
+			</dd>
+			<dd class="info">
+				<div class="floating_left">
+					<a href="user.php">我的消息</a>
+				</div>
+			</dd>
+
+			<dd class="return" onClick="gotoTop();return false;">
+				<div class="floating_left" >
+					<a href="#" >返回顶部</a>
+				</div>
+			</dd>
+		</dl>
+	</div>
+</div>

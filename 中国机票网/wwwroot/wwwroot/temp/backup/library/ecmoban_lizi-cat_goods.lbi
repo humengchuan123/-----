@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="xm-box">
+<h4 class="title" style="border-bottom:5px solid #008738;"><span>{$goods_cat.name|escape:html}</span>
+<a class="more" href="{$goods_cat.url}">更多>></a>
+</h4>
+<div style="width: 235px;height: 510px;float: left;margin-top: 8px;">
+	
+</div>
+<div style="width: 960px;height: auto;float: left;">
+<div id="show_hot_area" class="clearfix">
+      <!--{foreach from=$cat_goods item=goods}-->
+      <div class="goodsItem" style="width: 180px;margin-left: 40px;">
+       
+           <a href="{$goods.url}">
+           	<img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" style="width: 180px;height: 180px;"/></a><br />
+           <p class="f1"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape:html}</a></p>
+           
+           
+           <font class="market" style="float:left;">{$goods.market_price}</font><font class="f1" style="float:right;">
+           <!-- {if $goods.promote_price neq ""} -->
+          {$goods.promote_price}
+          <!-- {else}-->
+          {$goods.shop_price}
+          <!--{/if}-->
+           </font>      
+		    
+        </div>
+      <!--{/foreach}-->
+    </div>
+</div>
+</div>
+<div class="blank"></div>

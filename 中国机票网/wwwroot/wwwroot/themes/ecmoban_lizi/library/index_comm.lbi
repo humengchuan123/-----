@@ -1,0 +1,25 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+		
+			
+			
+			<?php $this->assign('my_comments',index_comments(8));?>
+<!--{foreach from=$my_comments item=comments}-->
+						<!-- {if $smarty.foreach.cat1.iteration<=4}-->
+
+			<div class="item"><div class="img"><a href="goods.php?id={$comments.id_value}" target="_blank" ><img src="{$comments.goods_thumb}" width="75" height="48"></a></div>
+			
+			<div class="txt">{$comments.user_name}<br>{$comments.content|truncate:30:"":true}</div></div>
+			
+					  <!-- {/if} -->
+					  
+					  <!-- {if $smarty.foreach.cat1.iteration >4}-->
+
+			<div class="item" style="float:right"><div class="img"><a href="goods.php?id={$comments.id_value}" target="_blank" ><img src="{$comments.goods_thumb}" width="75" height="48"></a></div>
+			
+			<div class="txt">{$comments.user_name}<br>{$comments.content|truncate:30:"":true}</div></div>
+			
+					  <!-- {/if} -->
+
+			
+			<!--{/foreach}-->

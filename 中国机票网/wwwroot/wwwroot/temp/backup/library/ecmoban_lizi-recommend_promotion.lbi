@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<div class="sale_box clearfix">
+<h3 style="border-bottom: 5px solid #f00;">
+<span style="font-size: 26px;padding-left: 45%;color: #f00;">今日推荐</span>
+<a href="search.php">更多>></a>
+</h3>
+
+ 
+      <div class="clearfix">
+         <!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
+        
+           <ul class="clearfix">
+           	
+           <li class="goodsimg">
+           	<img src="images/tuijian.png"  style="width:50px;height:50px;position: absolute;"/>
+           	<a href="{$goods.url}">
+           	<img src="{$goods.thumb}" border="0" alt="{$goods.name|escape:html}" class="B_blue"/>
+           	
+            </a>
+           </li>
+		   <li><p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
+           {$lang.promote_price}<font class="f1">{$goods.promote_price}</font></li>
+           <li>
+           	<p onclick="javascript:window.location.href='{$goods.url}'" class="group_buy_btn" style="width: 100px;height: 30px;margin-left: 50px;background: #f00;">
+		        立即抢购</p>
+           </li>
+           </ul>
+
+         <!--{/foreach}-->
+       </div>
+ </div>
+ 
+<div class="blank" style="height:1px;"></div>
+<!-- {/if} -->
